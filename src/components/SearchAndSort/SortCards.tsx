@@ -1,7 +1,7 @@
 import { useRef, memo } from 'react'
 import { Card } from '../../types/types'
 
-const SortCards: React.FC<{
+let SortCards: React.FC<{
   setProductList: React.Dispatch<React.SetStateAction<Card[]>>
   productApi: Card[]
   allCategoriesApi: string[]
@@ -89,4 +89,6 @@ const SortCards: React.FC<{
   )
 }
 
-export default memo(SortCards)
+SortCards = memo(SortCards)
+
+export default SortCards

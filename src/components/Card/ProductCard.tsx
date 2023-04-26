@@ -1,7 +1,8 @@
 import { Card } from '../../types/types'
 import { useSetCart } from '../Pages/RootLayout'
+import { memo } from 'react'
 
-const ProductCard: React.FC<Card> = (props) => {
+let ProductCard: React.FC<Card> = (props) => {
   const { setCart } = useSetCart()
 
   const addCardHandler = (id: number) => {
@@ -49,5 +50,7 @@ const ProductCard: React.FC<Card> = (props) => {
     </article>
   )
 }
+
+ProductCard = memo(ProductCard)
 
 export default ProductCard

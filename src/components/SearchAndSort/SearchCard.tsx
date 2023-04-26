@@ -1,7 +1,7 @@
 import { useState, useEffect, memo } from 'react'
 import { Card } from '../../types/types'
 
-const SearchCard: React.FC<{
+let SearchCard: React.FC<{
   setProductList: React.Dispatch<React.SetStateAction<Card[]>>
   productApi: Card[]
 }> = (props) => {
@@ -59,4 +59,6 @@ const SearchCard: React.FC<{
   )
 }
 
-export default memo(SearchCard)
+SearchCard = memo(SearchCard)
+
+export default SearchCard

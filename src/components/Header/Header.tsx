@@ -3,7 +3,7 @@ import { User, Cart } from '../../types/types'
 import { NavLink, useLoaderData } from 'react-router-dom'
 import { memo } from 'react'
 
-const Header: React.FC<{ cart: Cart[] }> = (props) => {
+let Header: React.FC<{ cart: Cart[] }> = (props) => {
   const cartQuantity = props.cart.reduce((total, current) => {
     return total + current.quantity
   }, 0)
@@ -57,4 +57,6 @@ const Header: React.FC<{ cart: Cart[] }> = (props) => {
   )
 }
 
-export default memo(Header)
+Header = memo(Header)
+
+export default Header

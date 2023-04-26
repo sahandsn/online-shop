@@ -1,7 +1,8 @@
 import ProductCard from '../Card/ProductCard'
 import { Card } from '../../types/types'
+import { memo } from 'react'
 
-const CardList: React.FC<{
+let CardList: React.FC<{
   productList: Card[]
 }> = (props) => {
   return (
@@ -12,5 +13,7 @@ const CardList: React.FC<{
     </main>
   )
 }
+
+CardList = memo(CardList)
 
 export default CardList
